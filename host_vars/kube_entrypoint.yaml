@@ -1,0 +1,5 @@
+ansible_host: 10.10.15.52
+ansible_user: "{{ lookup('community.hashi_vault.hashi_vault', 'secret=kube/entrypoint:username token=s.dwof9OUSz840O8UvnSWnGUOM url=http://10.180.12.36:8200') }}"
+ansible_ssh_pass: "{{ lookup('community.hashi_vault.hashi_vault', 'secret=kube/entrypoint:password token=s.dwof9OUSz840O8UvnSWnGUOM url=http://10.180.12.36:8200') }}"
+ansible_become_password: "{{ ansible_ssh_pass }}"
+
