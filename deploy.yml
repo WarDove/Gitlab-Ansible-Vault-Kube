@@ -5,6 +5,6 @@
   tasks:
 
     - name: Run kubectl set new image on api entrypoint
-      command: kubectl set image -n {{ lookup('env','NAMESPACE') }} deploy {{ lookup('env','CI_PROJECT_NAME') }} {{ lookup('env','CI_PROJECT_NAME') }}={{ lookup('env','CI_BUILD_IMAGE') }}
+      command: kubectl set image -n {{ lookup('env','CI_PROJECT_NAMESPACE') }} deploy {{ lookup('env','CI_PROJECT_NAME') }} {{ lookup('env','CI_PROJECT_NAME') }}={{ lookup('env','CI_BUILD_IMAGE') }}
       become: yes
 ...
